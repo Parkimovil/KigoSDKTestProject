@@ -1,0 +1,238 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.10 (swiftlang-5.10.0.13 clang-1500.3.9.4)
+// swift-module-flags: -target arm64-apple-ios17.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-bare-slash-regex -module-name KigoFramework
+import AVFoundation
+import Foundation
+@_exported import KigoFramework
+import Swift
+import UIKit
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+@objc @_inheritsConvenienceInitializers @IBDesignable @_Concurrency.MainActor(unsafe) final public class ToggleTorchButton : UIKit.UIButton {
+  @_Concurrency.MainActor(unsafe) @objc override final public func draw(_ rect: CoreFoundation.CGRect)
+  @_Concurrency.MainActor(unsafe) @objc override final public func touchesBegan(_ touches: Swift.Set<UIKit.UITouch>, with event: UIKit.UIEvent?)
+  @_Concurrency.MainActor(unsafe) @objc override final public func touchesMoved(_ touches: Swift.Set<UIKit.UITouch>, with event: UIKit.UIEvent?)
+  @_Concurrency.MainActor(unsafe) @objc override final public func touchesEnded(_ touches: Swift.Set<UIKit.UITouch>, with event: UIKit.UIEvent?)
+  @_Concurrency.MainActor(unsafe) @objc override final public func touchesCancelled(_ touches: Swift.Set<UIKit.UITouch>?, with event: UIKit.UIEvent?)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreFoundation.CGRect)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @objc deinit
+}
+@_inheritsConvenienceInitializers public class KigoScanner : KigoFramework.KigoSDK {
+  public static var delegate: (any KigoFramework.KigoScannerDelegate)?
+  public static func scanQrCode(qrCode: Swift.String, devReference: Swift.String, userKigo: KigoFramework.UserKigo)
+  override public init(apiKey: Swift.String)
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) final public class QRCodeReaderView : UIKit.UIView, KigoFramework.QRCodeReaderDisplayable {
+  @_Concurrency.MainActor(unsafe) final public var overlayView: (any KigoFramework.QRCodeReaderViewOverlay)? {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) final public let cameraView: UIKit.UIView
+  @_Concurrency.MainActor(unsafe) final public var cancelButton: UIKit.UIButton? {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) final public var switchCameraButton: UIKit.UIButton? {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) final public var toggleTorchButton: UIKit.UIButton? {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) final public func setupComponents(with builder: KigoFramework.QRCodeReaderViewControllerBuilder)
+  @_Concurrency.MainActor(unsafe) @objc override final public func layoutSubviews()
+  @objc @_Concurrency.MainActor(unsafe) final public func setNeedsUpdateOrientation()
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreFoundation.CGRect)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers final public class QRCodeReader : ObjectiveC.NSObject, AVFoundation.AVCaptureMetadataOutputObjectsDelegate {
+  final public let previewLayer: AVFoundation.AVCaptureVideoPreviewLayer
+  final public let metadataObjectTypes: [AVFoundation.AVMetadataObject.ObjectType]
+  final public var stopScanningWhenCodeIsFound: Swift.Bool
+  final public var didFindCode: ((KigoFramework.QRCodeReaderResult) -> Swift.Void)?
+  final public var didFailDecoding: (() -> Swift.Void)?
+  @objc convenience override dynamic public init()
+  convenience public init(metadataObjectTypes types: [AVFoundation.AVMetadataObject.ObjectType])
+  convenience public init(captureDevicePosition position: AVFoundation.AVCaptureDevice.Position)
+  public init(metadataObjectTypes types: [AVFoundation.AVMetadataObject.ObjectType], captureDevicePosition: AVFoundation.AVCaptureDevice.Position)
+  @discardableResult
+  final public func switchDeviceInput() -> AVFoundation.AVCaptureDeviceInput?
+  final public func startScanning()
+  final public func stopScanning()
+  final public var isRunning: Swift.Bool {
+    get
+  }
+  final public var hasFrontDevice: Swift.Bool {
+    get
+  }
+  final public var isTorchAvailable: Swift.Bool {
+    get
+  }
+  final public func toggleTorch()
+  final public class func videoOrientation(deviceOrientation orientation: UIKit.UIDeviceOrientation, withSupportedOrientations supportedOrientations: UIKit.UIInterfaceOrientationMask, fallbackOrientation: AVFoundation.AVCaptureVideoOrientation? = nil) -> AVFoundation.AVCaptureVideoOrientation
+  final public class func isAvailable() -> Swift.Bool
+  final public class func supportsMetadataObjectTypes(_ metadataTypes: [AVFoundation.AVMetadataObject.ObjectType]? = nil) throws -> Swift.Bool
+  @objc final public func metadataOutput(_ output: AVFoundation.AVCaptureMetadataOutput, didOutput metadataObjects: [AVFoundation.AVMetadataObject], from connection: AVFoundation.AVCaptureConnection)
+  @objc deinit
+}
+public struct KigoError : Swift.Codable {
+  public let name: Swift.String?
+  public let code: Swift.Int?
+  public let status: Swift.Int?
+  public let message: Swift.String?
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct UserKigo {
+  public var countryCode: Swift.String?
+  public var mobilePhone: Swift.String?
+  public var userName: Swift.String?
+  public var userEmail: Swift.String?
+  public init(countryCode: Swift.String? = nil, mobilePhone: Swift.String? = nil, userName: Swift.String? = nil, userEmail: Swift.String? = nil)
+}
+@objc @_Concurrency.MainActor(unsafe) public class QRCodeReaderViewController : UIKit.UIViewController {
+  @_Concurrency.MainActor(unsafe) public var codeReader: KigoFramework.QRCodeReader {
+    get
+  }
+  @_Concurrency.MainActor(unsafe) weak public var delegate: (any KigoFramework.QRCodeReaderViewControllerDelegate)?
+  @_Concurrency.MainActor(unsafe) public var completionBlock: ((KigoFramework.QRCodeReaderResult?) -> Swift.Void)?
+  @objc deinit
+  @_Concurrency.MainActor(unsafe) required public init(builder: KigoFramework.QRCodeReaderViewControllerBuilder)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewWillAppear(_ animated: Swift.Bool)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewWillDisappear(_ animated: Swift.Bool)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewWillLayoutSubviews()
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public var preferredStatusBarStyle: UIKit.UIStatusBarStyle {
+    @objc get
+  }
+  @_Concurrency.MainActor(unsafe) public func startScanning()
+  @_Concurrency.MainActor(unsafe) public func stopScanning()
+}
+public protocol QRCodeReaderDisplayable {
+  var cameraView: UIKit.UIView { get }
+  var cancelButton: UIKit.UIButton? { get }
+  var switchCameraButton: UIKit.UIButton? { get }
+  var toggleTorchButton: UIKit.UIButton? { get }
+  var overlayView: (any KigoFramework.QRCodeReaderViewOverlay)? { get }
+  func setNeedsUpdateOrientation()
+  func setupComponents(with builder: KigoFramework.QRCodeReaderViewControllerBuilder)
+}
+public struct QRCodeReaderContainer {
+  public init<T>(displayable: T) where T : UIKit.UIView, T : KigoFramework.QRCodeReaderDisplayable
+}
+@objc @_inheritsConvenienceInitializers @IBDesignable @_Concurrency.MainActor(unsafe) final public class SwitchCameraButton : UIKit.UIButton {
+  @_Concurrency.MainActor(unsafe) @objc override final public func draw(_ rect: CoreFoundation.CGRect)
+  @_Concurrency.MainActor(unsafe) @objc override final public func touchesBegan(_ touches: Swift.Set<UIKit.UITouch>, with event: UIKit.UIEvent?)
+  @_Concurrency.MainActor(unsafe) @objc override final public func touchesMoved(_ touches: Swift.Set<UIKit.UITouch>, with event: UIKit.UIEvent?)
+  @_Concurrency.MainActor(unsafe) @objc override final public func touchesEnded(_ touches: Swift.Set<UIKit.UITouch>, with event: UIKit.UIEvent?)
+  @_Concurrency.MainActor(unsafe) @objc override final public func touchesCancelled(_ touches: Swift.Set<UIKit.UITouch>?, with event: UIKit.UIEvent?)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreFoundation.CGRect)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @objc deinit
+}
+public class KigoSDK : KigoFramework.QRCodeReaderViewControllerDelegate {
+  public var parentVC: UIKit.UIViewController?
+  public init(apiKey: Swift.String)
+  public func checkApiKey() -> Swift.Bool
+  public func scanQrCode(context: UIKit.UIViewController, devReference: Swift.String, userKigo: KigoFramework.UserKigo) -> UIKit.UIViewController
+  public func reader(_ reader: KigoFramework.QRCodeReaderViewController, didScanResult result: KigoFramework.QRCodeReaderResult)
+  public func readerDidCancel(_ reader: KigoFramework.QRCodeReaderViewController)
+  @objc deinit
+}
+final public class QRCodeReaderViewControllerBuilder {
+  public typealias QRCodeReaderViewControllerBuilderBlock = (KigoFramework.QRCodeReaderViewControllerBuilder) -> Swift.Void
+  final public var cancelButtonTitle: Swift.String
+  final public var reader: KigoFramework.QRCodeReader
+  final public var readerView: KigoFramework.QRCodeReaderContainer
+  final public var startScanningAtLoad: Swift.Bool
+  final public var showCancelButton: Swift.Bool
+  final public var showSwitchCameraButton: Swift.Bool {
+    get
+    set
+  }
+  final public var showTorchButton: Swift.Bool {
+    get
+    set
+  }
+  final public var showOverlayView: Swift.Bool
+  final public var handleOrientationChange: Swift.Bool
+  final public var preferredStatusBarStyle: UIKit.UIStatusBarStyle?
+  final public var rectOfInterest: CoreFoundation.CGRect {
+    get
+    set
+  }
+  public init()
+  public init(buildBlock: (KigoFramework.QRCodeReaderViewControllerBuilder) -> Swift.Void)
+  @objc deinit
+}
+public enum QRCodeReaderViewOverlayState {
+  case normal
+  case valid
+  case wrong
+  public static func == (a: KigoFramework.QRCodeReaderViewOverlayState, b: KigoFramework.QRCodeReaderViewOverlayState) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public protocol QRCodeReaderViewOverlay : UIKit.UIView {
+  func setState(_ state: KigoFramework.QRCodeReaderViewOverlayState)
+}
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) final public class ReaderOverlayView : UIKit.UIView {
+  @_Concurrency.MainActor(unsafe) final public var defaultColor: UIKit.UIColor
+  @_Concurrency.MainActor(unsafe) final public var highlightValidColor: UIKit.UIColor
+  @_Concurrency.MainActor(unsafe) final public var highlightWrongColor: UIKit.UIColor
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  @_Concurrency.MainActor(unsafe) @objc override final public func draw(_ rect: CoreFoundation.CGRect)
+  @objc deinit
+}
+extension KigoFramework.ReaderOverlayView : KigoFramework.QRCodeReaderViewOverlay {
+  @_Concurrency.MainActor(unsafe) final public func setState(_ state: KigoFramework.QRCodeReaderViewOverlayState)
+}
+public protocol QRCodeReaderViewControllerDelegate : AnyObject {
+  func reader(_ reader: KigoFramework.QRCodeReaderViewController, didScanResult result: KigoFramework.QRCodeReaderResult)
+  func reader(_ reader: KigoFramework.QRCodeReaderViewController, didSwitchCamera newCaptureDevice: AVFoundation.AVCaptureDeviceInput)
+  func readerDidCancel(_ reader: KigoFramework.QRCodeReaderViewController)
+}
+extension KigoFramework.QRCodeReaderViewControllerDelegate {
+  public func reader(_ reader: KigoFramework.QRCodeReaderViewController, didSwitchCamera newCaptureDevice: AVFoundation.AVCaptureDeviceInput)
+}
+public struct QRCodeReaderResult {
+  public let value: Swift.String
+  public let metadataType: Swift.String
+}
+public protocol KigoScannerDelegate {
+  func onQRScanCompleted(_ result: KigoFramework.QRScanResult)
+  func onError(_ error: KigoFramework.KigoError)
+}
+public struct QRScanResult {
+  public var ticket: KigoFramework.Ticket?
+  public var qrCode: Swift.String?
+}
+public struct Ticket {
+  public var id: Swift.Int?
+  public var checkIn: KigoFramework.TicketCheckIn?
+  public var checkOut: KigoFramework.TicketCheckOut?
+  public var parkingLot: KigoFramework.TicketParkingLot?
+}
+public struct TicketCheckIn {
+  public var id: Swift.Int?
+  public var checkInDate: Swift.Int?
+}
+public struct TicketCheckOut {
+  public var id: Swift.Int?
+  public var checkOutDate: Swift.Int?
+}
+public struct TicketParkingLot : Swift.Codable {
+  public var id: Swift.Int?
+  public var parkingLotName: Swift.String?
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+extension KigoFramework.QRCodeReaderViewOverlayState : Swift.Equatable {}
+extension KigoFramework.QRCodeReaderViewOverlayState : Swift.Hashable {}

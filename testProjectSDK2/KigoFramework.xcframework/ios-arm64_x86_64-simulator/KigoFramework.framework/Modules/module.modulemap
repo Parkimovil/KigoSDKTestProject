@@ -1,0 +1,11 @@
+framework module KigoFramework {
+  umbrella header "KigoFramework.h"
+  export *
+
+  module * { export * }
+}
+
+module KigoFramework.Swift {
+  header "KigoFramework-Swift.h"
+  requires objc
+}
