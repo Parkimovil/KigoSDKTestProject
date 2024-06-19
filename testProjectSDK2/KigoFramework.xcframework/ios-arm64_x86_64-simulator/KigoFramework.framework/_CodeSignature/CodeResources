@@ -14,7 +14,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		G1A1akZ4DGOMNJ3U8YzkKQJ+R7U=
+		AdSa1IXnWXQCeaT1mLvfLUXuq/g=
 		</data>
 		<key>Modules/KigoFramework.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<data>
@@ -34,7 +34,7 @@
 		</data>
 		<key>Modules/KigoFramework.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		sAY4YZuakdZeQdj4kF17mMBH1WM=
+		YAlS5Vy36TA2tHwcFiAeOHAdZAs=
 		</data>
 		<key>Modules/KigoFramework.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<data>
@@ -54,7 +54,7 @@
 		</data>
 		<key>Modules/KigoFramework.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		JmyYGianxJ2bGYUR5HVY4cAlE1I=
+		NmdWtZTmRomse98AnDcolqcb5m8=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -109,7 +109,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			IO9Cv/UYwWErs12slNydZEbP3qPJYbswipUwIKdC3m8=
+			2MUQ7OwIKJcOrVPltsoTMEtgii8HJzx4py8Nz4B0/f4=
 			</data>
 		</dict>
 		<key>Modules/KigoFramework.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
@@ -144,7 +144,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			w4Fh0GkR0SjYjkUOQhEnwWNVEZU1EsMyzgUsnWaydAw=
+			JtawCh5TES03hNrRYPMIc8nd6st1b+dyKYrorTXjw4A=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

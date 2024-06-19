@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		20107D6E2C22607F00B49CE4 /* KigoFramework.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20107D6C2C22603B00B49CE4 /* KigoFramework.xcframework */; };
+		20107D6F2C22607F00B49CE4 /* KigoFramework.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 20107D6C2C22603B00B49CE4 /* KigoFramework.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		208C97732BE54F9900C578B0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208C97722BE54F9900C578B0 /* AppDelegate.swift */; };
 		208C97752BE54F9900C578B0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208C97742BE54F9900C578B0 /* SceneDelegate.swift */; };
 		208C97772BE54F9900C578B0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208C97762BE54F9900C578B0 /* ViewController.swift */; };
@@ -16,8 +18,6 @@
 		208C978A2BE54F9A00C578B0 /* testProjectSDK2Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208C97892BE54F9A00C578B0 /* testProjectSDK2Tests.swift */; };
 		208C97942BE54F9A00C578B0 /* testProjectSDK2UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208C97932BE54F9A00C578B0 /* testProjectSDK2UITests.swift */; };
 		208C97962BE54F9A00C578B0 /* testProjectSDK2UITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208C97952BE54F9A00C578B0 /* testProjectSDK2UITestsLaunchTests.swift */; };
-		20B7D4D92BF2EBE0006FB759 /* KigoFramework.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20B7D4D72BF2EBC9006FB759 /* KigoFramework.xcframework */; };
-		20B7D4DA2BF2EBE0006FB759 /* KigoFramework.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 20B7D4D72BF2EBC9006FB759 /* KigoFramework.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,7 +44,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				20B7D4DA2BF2EBE0006FB759 /* KigoFramework.xcframework in Embed Frameworks */,
+				20107D6F2C22607F00B49CE4 /* KigoFramework.xcframework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -52,6 +52,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		20107D6C2C22603B00B49CE4 /* KigoFramework.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = KigoFramework.xcframework; sourceTree = "<group>"; };
 		208C976F2BE54F9900C578B0 /* testProjectSDKKigo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = testProjectSDKKigo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		208C97722BE54F9900C578B0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		208C97742BE54F9900C578B0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -65,7 +66,6 @@
 		208C978F2BE54F9A00C578B0 /* testProjectSDKKigoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = testProjectSDKKigoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		208C97932BE54F9A00C578B0 /* testProjectSDK2UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testProjectSDK2UITests.swift; sourceTree = "<group>"; };
 		208C97952BE54F9A00C578B0 /* testProjectSDK2UITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testProjectSDK2UITestsLaunchTests.swift; sourceTree = "<group>"; };
-		20B7D4D72BF2EBC9006FB759 /* KigoFramework.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = KigoFramework.xcframework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,7 +73,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				20B7D4D92BF2EBE0006FB759 /* KigoFramework.xcframework in Frameworks */,
+				20107D6E2C22607F00B49CE4 /* KigoFramework.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -118,8 +118,8 @@
 		208C97712BE54F9900C578B0 /* testProjectSDK2 */ = {
 			isa = PBXGroup;
 			children = (
-				20B7D4D72BF2EBC9006FB759 /* KigoFramework.xcframework */,
 				208C97722BE54F9900C578B0 /* AppDelegate.swift */,
+				20107D6C2C22603B00B49CE4 /* KigoFramework.xcframework */,
 				208C97742BE54F9900C578B0 /* SceneDelegate.swift */,
 				208C97762BE54F9900C578B0 /* ViewController.swift */,
 				208C97782BE54F9900C578B0 /* Main.storyboard */,

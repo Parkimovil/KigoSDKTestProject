@@ -14,7 +14,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		gFaI0t1wwqD33scCrwOuKf2qXiI=
+		B4rnKesc5Dq40/kh5jqETqAdh8o=
 		</data>
 		<key>Modules/KigoFramework.swiftmodule/arm64-apple-ios.abi.json</key>
 		<data>
@@ -34,7 +34,7 @@
 		</data>
 		<key>Modules/KigoFramework.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<data>
-		StlmXBFIcUUObLUMV/z5P9UFrTg=
+		jRQS/b1ZyZUnArMd4+1LA5YjTHM=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -89,7 +89,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			F7hd2pgcV2j3TUew8LoHL4ke53o03abTvK2qQADeyug=
+			vHQ2EjFiNZJ+QSy4Skmd3XU7x1iwPFliXH2YHbp9JWg=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
